@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import Img1 from "../../assets/blog1.jpg";
-import Img2 from "../../assets/blog2.jpg";
-import Img3 from "../../assets/blog3.jpg";
+import cars from "../../assets/cars.jpg";
+import realestate from "../../assets/real-estate.jpg";
+import pharmacy from "../../assets/pharmacy.webp";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -18,25 +18,30 @@ const Blogs = () => {
             className="p-4 shadow-lg transition-all duration-500 hover:shadow-xl dark:bg-slate-950"
           >
             <div className="overflow-hidden">
+              <a href="https://drive.empowerafricanow.com/" target="blank">
               <img
-                src={Img1}
+                src={cars}
                 alt="No image"
                 className="mx-auto h-[250px] w-full object-cover transition duration-700 hover:skew-x-2 hover:scale-110"
               />
+              </a>
             </div>
-            <div className="flex justify-between pt-2 text-slate-600">
-              <p>April 24, 2022</p>
-              <p className="line-clamp-1"> By Dilshad</p>
-            </div>
+            
             <div className="space-y-3 py-3">
               <h1 className="line-clamp-1 text-xl font-bold">
-                How to grow your business. How to grow your business.
+                Car Rental Website
               </h1>
               <p className="line-clamp-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. amet
-                consectetur adipisicing elit.
+                We have developed car rental system to make our client happy and easy booking , book with us on afoldable price and get discount
               </p>
             </div>
+            <a href="https://drive.empowerafricanow.com/" target="blank">
+            <button className="rounded-md border-2 border-primary bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-primary/80">
+                Book Now
+              </button>
+              </a>
+            
+            
           </div>
           <div
             id="card"
@@ -44,24 +49,25 @@ const Blogs = () => {
           >
             <div className="overflow-hidden">
               <img
-                src={Img2}
+                src={realestate}
                 alt="No image"
                 className="mx-auto h-[250px] w-full object-cover transition duration-700 hover:skew-x-2 hover:scale-110"
               />
             </div>
-            <div className="flex justify-between pt-2 text-slate-600">
-              <p>Jan 3, 2023</p>
-              <p className="line-clamp-1"> By Akshay</p>
-            </div>
+            
             <div className="space-y-3 py-3">
               <h1 className="line-clamp-1 text-xl font-bold">
-                How to grow your business. How to grow your business.
+                Real Estate system
               </h1>
               <p className="line-clamp-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. amet
-                consectetur adipisicing elit.
+                Empower Africa Now developed Real estate system for making easy life for our client, rent house, by house, buy Prot with us
               </p>
             </div>
+            <a href="#">
+            <button className="rounded-md border-2 border-primary bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-primary/80">
+                Vist Website
+              </button>
+              </a>
           </div>
           <div
             id="card"
@@ -69,24 +75,25 @@ const Blogs = () => {
           >
             <div className="overflow-hidden">
               <img
-                src={Img3}
+                src={pharmacy}
                 alt="No image"
                 className="mx-auto h-[250px] w-full object-cover transition duration-700 hover:skew-x-2 hover:scale-110"
               />
             </div>
-            <div className="flex justify-between pt-2 text-slate-600">
-              <p>April 24, 2024</p>
-              <p className="line-clamp-1"> By Satya</p>
-            </div>
+            
             <div className="space-y-3 py-3">
               <h1 className="line-clamp-1 text-xl font-bold">
-                How to grow your business. How to grow your business.
+                Pharmacy
               </h1>
               <p className="line-clamp-2">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. amet
-                consectetur adipisicing elit.
+                Empower Africa Now owns Pharmacy located at Kicukiro center
               </p>
             </div>
+            <a href="#">
+            <button className="rounded-md border-2 border-primary bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-primary/80">
+                Talk to Pharmacist 
+              </button>
+              </a>
           </div>
         </div>
       </section>

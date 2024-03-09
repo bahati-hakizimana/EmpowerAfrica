@@ -26,8 +26,8 @@ const Service = () => {
         <div className="flex flex-col items-center justify-center">
           <h1 className="text-sm font-bold text-black/80 dark:text-white sm:text-lg md:text-3xl">
             <CountUp
-              start={-875.039}
-              end={160527.012}
+              start={-16.039}
+              end={25.012}
               duration={2.75}
               separator=" "
               // decimals={4}
@@ -35,7 +35,7 @@ const Service = () => {
               suffix="+"
             />
           </h1>
-          <h1 className="sm:text-md text-xs  md:text-lg">Clients</h1>
+          <h1 className="sm:text-md text-xs  md:text-lg">Partiners</h1>
         </div>
       </div>
     </section>
