@@ -15,6 +15,7 @@ import Banner1 from "./assets/blog1.jpg";
 import Banner2 from "./assets/blog3.jpg";
 import AboutUs from "./components/BannerDetails/AboutUs";
 import Features from "./components/features/Features";
+import Contact from "./components/contact/Contact";
 
 function App() {
   useEffect(() => {
@@ -43,6 +44,7 @@ function App() {
         <Banner />
         <Blogs />
         {/* <Swipe /> */}
+        <Contact />
         <Footer />
       </div>
     </>
