@@ -90,17 +90,21 @@ const Navbar2 = () => {
               <li className={`cursor pointer ${activeMenu === 'careers' ? 'active' : ''}`} onClick={() => handleMenuClick('careers')}>
                 <a href="/#careers" className="relative">
                   Careers
-                  {activeMenu === 'careers' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                  {/* {activeMenu === 'careers' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>} */}
                 </a>
               </li>
-              <li className={`cursor pointer ${activeMenu === 'careers' ? 'active' : ''}`} onClick={() => handleMenuClick('careers')}>
-                <a href="/#contact" className="relative">
-                  Contact
-                  {activeMenu === 'careers' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+              <li className={`cursor pointer group ${activeMenu === 'contact' ? 'active' : ''}`} onClick={() => handleMenuClick('contact')}>
+                <a
+                  href="/#contact"
+                  className="flex h-[72px] items-center gap-[2px] relative"
+                >
+                  Contact Us
+                  {activeMenu === 'contact' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
                 </a>
+               
               </li>
               <li className={`cursor pointer ${activeMenu === 'login' ? 'active' : ''}`} onClick={() => handleMenuClick('login')}>
-                <a href="/#contact" className="relative">
+                <a href="#" className="relative">
                   Login
                   {activeMenu === 'login' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
                 </a>
