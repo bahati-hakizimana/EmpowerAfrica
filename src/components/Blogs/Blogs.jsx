@@ -7,8 +7,8 @@ import "aos/dist/aos.css";
 
 const Blogs = () => {
   return (
-    <main data-aos="fade-up" data-aos-offset="200">
-      <section className="container mb-10 py-8">
+    <main data-aos="fade-up" data-aos-offset="200" id="services">
+      <section className="container mb-10 py-8" id="services">
         <h1 className="mb-8 border-l-8 py-2 pl-2 text-center text-3xl font-bold">
           Our Services
         </h1>

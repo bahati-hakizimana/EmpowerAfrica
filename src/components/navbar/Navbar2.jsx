@@ -9,11 +9,16 @@ const Navbar2 = () => {
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
   );
   const [showMenu, setShowMenu] = useState(false);
+  const [activeMenu, setActiveMenu] = useState('home'); // Default active menu is 'home'
 
   const element = document.documentElement;
 
   const toggleMenu = () => {
     setShowMenu(!showMenu);
+  };
+
+  const handleMenuClick = (menu) => {
+    setActiveMenu(menu);
   };
 
   useEffect(() => {
@@ -33,7 +38,7 @@ const Navbar2 = () => {
       <header
         data-aos="fade"
         data-aos-duration="300"
-        className="relative z-[99] border-b-[1px]  border-primary/50 bg-gradient-to-l from-violet-900 via-violet-800 to-violet-900 text-white shadow-lg"
+        className="relative z-[99] border-b-[1px]  border-primary/50 bg-purple-500 from-violet-900 via-violet-800 to-violet-900 text-white shadow-lg"
       >
         <nav className="container  flex h-[70px] items-center justify-between py-2 ">
           <div className="text-2xl text-white md:text-3xl ">
@@ -46,33 +51,43 @@ const Navbar2 = () => {
           {/* Desktop Menu */}
           <div className="hidden md:block">
             <ul className="flex items-center gap-10">
-              <li className="group relative cursor-pointer">
+              <li className={`group relative cursor-pointer ${activeMenu === 'home' ? 'active' : ''}`} onClick={() => handleMenuClick('home')}>
                 <a
                   href="/#home"
-                  className="flex h-[72px] items-center gap-[2px]"
+                  className="flex h-[72px] items-center gap-[2px] relative"
                 >
                   Home
-                  
+                  {activeMenu === 'home' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
                 </a>
                 </li>
                 
-              <li className="cursor pointer group">
+              <li className={`cursor pointer group ${activeMenu === 'services' ? 'active' : ''}`} onClick={() => handleMenuClick('services')}>
                 <a
-                  href="/#home"
-                  className="flex h-[72px] items-center gap-[2px]"
+                  href="/#services"
+                  className="flex h-[72px] items-center gap-[2px] relative"
                 >
                   Services
+                  {activeMenu === 'services' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
                 </a>
                
               </li>
-              <li className="cursor pointer">
-                <a href="/#contact">About us</a>
+              <li className={`cursor pointer ${activeMenu === 'about' ? 'active' : ''}`} onClick={() => handleMenuClick('about')}>
+                <a href="/#contact" className="relative">
+                  About us
+                  {activeMenu === 'about' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                </a>
               </li>
-              <li className="cursor pointer">
-                <a href="/#contact">Careers</a>
+              <li className={`cursor pointer ${activeMenu === 'careers' ? 'active' : ''}`} onClick={() => handleMenuClick('careers')}>
+                <a href="/#contact" className="relative">
+                  Careers
+                  {activeMenu === 'careers' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                </a>
               </li>
-              <li className="cursor pointer">
-                <a href="/#contact">Login</a>
+              <li className={`cursor pointer ${activeMenu === 'login' ? 'active' : ''}`} onClick={() => handleMenuClick('login')}>
+                <a href="/#contact" className="relative">
+                  Login
+                  {activeMenu === 'login' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                </a>
               </li>
               {/* Phone number section */}
               <div className="flex items-center gap-4">
