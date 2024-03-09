@@ -10,9 +10,11 @@ import Hero from "./components/Hero.jsx/Hero";
 import Navbar2 from "./components/navbar/Navbar2";
 import { useEffect } from "react";
 import Service from "./components/Service/Service";
-import BannerDetails from "./components/BannerDetails/BannerDetails";
+// import BannerDetails from "./components/BannerDetails/BannerDetail";
 import Banner1 from "./assets/blog1.jpg";
 import Banner2 from "./assets/blog3.jpg";
+import AboutUs from "./components/BannerDetails/AboutUs";
+import Features from "./components/features/Features";
 
 function App() {
   useEffect(() => {
@@ -33,8 +35,11 @@ function App() {
         </div>
         <Hero />
         <Service />
-        <BannerDetails reverse={true} img={Banner1} />
-        <BannerDetails img={Banner2} />
+        {/* <BannerDetails reverse={true} img={Banner1} />
+        <BannerDetails img={Banner2} /> */}
+        <AboutUs />
+        <Features />
+
         <Banner />
         <Blogs />
         {/* <Swipe /> */}

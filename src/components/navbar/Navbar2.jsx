@@ -71,15 +71,31 @@ const Navbar2 = () => {
                 </a>
                
               </li>
-              <li className={`cursor pointer ${activeMenu === 'about' ? 'active' : ''}`} onClick={() => handleMenuClick('about')}>
-                <a href="/#contact" className="relative">
+              <li className={`cursor pointer group ${activeMenu === 'about' ? 'active' : ''}`} onClick={() => handleMenuClick('about')}>
+                <a
+                  href="/#aboutus"
+                  className="flex h-[72px] items-center gap-[2px] relative"
+                >
+                  About
+                  {activeMenu === 'about' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                </a>
+               
+              </li>
+              {/* <li className={`cursor pointer ${activeMenu === 'about' ? 'active' : ''}`} onClick={() => handleMenuClick('about')}>
+                <a href="/#aboutus" className="relative">
                   About us
                   {activeMenu === 'about' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                </a>
+              </li> */}
+              <li className={`cursor pointer ${activeMenu === 'careers' ? 'active' : ''}`} onClick={() => handleMenuClick('careers')}>
+                <a href="/#careers" className="relative">
+                  Careers
+                  {activeMenu === 'careers' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
                 </a>
               </li>
               <li className={`cursor pointer ${activeMenu === 'careers' ? 'active' : ''}`} onClick={() => handleMenuClick('careers')}>
                 <a href="/#contact" className="relative">
-                  Careers
+                  Contact
                   {activeMenu === 'careers' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
                 </a>
               </li>
