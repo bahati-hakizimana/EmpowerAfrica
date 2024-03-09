@@ -6,6 +6,7 @@ import {
   FaLocationArrow,
   FaMobileAlt,
 } from "react-icons/fa";
+import ourlogo from '../../assets/ourlogo.png'
 
 const Footer = () => {
   return (
@@ -15,8 +16,7 @@ const Footer = () => {
           <div className=" px-4 py-8 ">
             <h1 className="mb-3 text-justify text-xl font-bold sm:text-left sm:text-3xl">
               <a href="/#home" className="">
-                COZ
-                <span className="inline-block font-bold text-primary">WEB</span>
+              <img src={ourlogo} alt="" className=" w-35 h-12"  />
               </a>
             </h1>
             <p className="">
@@ -26,11 +26,11 @@ const Footer = () => {
             <br />
             <div className="flex items-center gap-3">
               <FaLocationArrow />
-              <p>Noida, Uttar Pradesh</p>
+              <p>Kicukiro center, Sangwa House</p>
             </div>
             <div className="mt-3 flex items-center gap-3">
               <FaMobileAlt />
-              <p>+91 123456789</p>
+              <p>+250780035234</p>
             </div>
             {/* Social Handle */}
           </div>
@@ -104,7 +104,7 @@ const Footer = () => {
         </div>
         <div>
           <div className="border-t-2 border-gray-300/50 py-6 text-center">
-            @copyright 2024 Travery || Dilshad
+            @copyright 2024 Empower Africa Now Ltd || Rwanda
           </div>
         </div>
       </section>

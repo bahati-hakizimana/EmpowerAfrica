@@ -10,7 +10,7 @@ const Blogs = () => {
     <main data-aos="fade-up" data-aos-offset="200">
       <section className="container mb-10 py-8">
         <h1 className="mb-8 border-l-8 py-2 pl-2 text-center text-3xl font-bold">
-          Our Latest Blogs
+          Our Services
         </h1>
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 md:grid-cols-3">
           <div

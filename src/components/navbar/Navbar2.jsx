@@ -3,6 +3,7 @@ import { BiSolidSun, BiPhoneCall, BiSolidMoon } from "react-icons/bi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import { FaCaretDown } from "react-icons/fa";
 import ResponsiveMenu from "./ResponsiveMenu";
+import ourlogo from '../../assets/ourlogo.png'
 const Navbar2 = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
@@ -37,8 +38,9 @@ const Navbar2 = () => {
         <nav className="container  flex h-[70px] items-center justify-between py-2 ">
           <div className="text-2xl text-white md:text-3xl ">
             <a href="/#home" className="">
-              COZ
-              <span className="inline-block font-bold text-primary">WEB</span>
+              {/* COZ
+              <span className="inline-block font-bold text-primary">WEB</span> */}
+              <img src={ourlogo} alt="" className=" w-35 h-12"  />
             </a>
           </div>
           {/* Desktop Menu */}
@@ -130,6 +132,12 @@ const Navbar2 = () => {
               </li>
               <li className="cursor pointer">
                 <a href="/#contact">About us</a>
+              </li>
+              <li className="cursor pointer">
+                <a href="/#contact">Careers</a>
+              </li>
+              <li className="cursor pointer">
+                <a href="/#contact">Login</a>
               </li>
               {/* Phone number section */}
               <div className="flex items-center gap-4">

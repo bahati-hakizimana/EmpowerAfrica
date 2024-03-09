@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { BiMenu, BiPhoneCall } from "react-icons/bi";
 import { FaCaretDown } from "react-icons/fa";
+import ourlogo from '../../assets/ourlogo.png'
 const Navbar = () => {
   // Check the local storage or user's preference for the initial theme
   const element = document.documentElement;
@@ -62,10 +63,11 @@ const Navbar = () => {
       <nav className="container  flex h-[70px] items-center justify-between py-2 ">
         <div className="text-2xl text-white md:text-3xl ">
           <a href="/#home" className="">
-            COZ
+            {/* COZ
             <span className="inline-block font-bold text-primary dark:text-black">
               WEB
-            </span>
+            </span> */}
+            <img src={{ourlogo}} alt="" />
           </a>
         </div>
         <div className="hidden md:block">
