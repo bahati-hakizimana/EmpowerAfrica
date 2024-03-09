@@ -6,7 +6,8 @@ import {
   FaLocationArrow,
   FaMobileAlt,
 } from "react-icons/fa";
-import ourlogo from '../../assets/ourlogo.png'
+// import ourlogo from '../../assets/ourlogo.png'
+import logo from '../../assets/Empower.png'
 
 const Footer = () => {
   return (
@@ -16,7 +17,7 @@ const Footer = () => {
           <div className=" px-4 py-8 ">
             <h1 className="mb-3 text-justify text-xl font-bold sm:text-left sm:text-3xl">
               <a href="/#home" className="">
-              <img src={ourlogo} alt="" className=" w-35 h-12"  />
+              <img src={logo} alt="" className=" w-35 h-12"  />
               </a>
             </h1>
             <p className="">

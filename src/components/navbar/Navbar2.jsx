@@ -3,7 +3,7 @@ import { BiSolidSun, BiPhoneCall, BiSolidMoon } from "react-icons/bi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import { FaCaretDown } from "react-icons/fa";
 import ResponsiveMenu from "./ResponsiveMenu";
-import ourlogo from '../../assets/ourlogo.png'
+import logo from '../../assets/Empower.png'
 const Navbar2 = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
@@ -45,7 +45,7 @@ const Navbar2 = () => {
             <a href="/#home" className="">
               {/* COZ
               <span className="inline-block font-bold text-primary">WEB</span> */}
-              <img src={ourlogo} alt="" className=" w-35 h-12"  />
+              <img src={logo} alt="" className=" w-35 h-12"  />
             </a>
           </div>
           {/* Desktop Menu */}
