@@ -54,7 +54,7 @@ const Navbar2 = () => {
               <li className={`group relative cursor-pointer ${activeMenu === 'home' ? 'active' : ''}`} onClick={() => handleMenuClick('home')}>
                 <a
                   href="/#home"
-                  className="flex h-[72px] items-center gap-[2px] relative"
+                  className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-300"
                 >
                   Home
                   {activeMenu === 'home' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
@@ -64,7 +64,7 @@ const Navbar2 = () => {
               <li className={`cursor pointer group ${activeMenu === 'services' ? 'active' : ''}`} onClick={() => handleMenuClick('services')}>
                 <a
                   href="/#services"
-                  className="flex h-[72px] items-center gap-[2px] relative"
+                  className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400"
                 >
                   Services
                   {activeMenu === 'services' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
@@ -74,21 +74,18 @@ const Navbar2 = () => {
               <li className={`cursor pointer group ${activeMenu === 'about' ? 'active' : ''}`} onClick={() => handleMenuClick('about')}>
                 <a
                   href="/#aboutus"
-                  className="flex h-[72px] items-center gap-[2px] relative"
+                  className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400"
                 >
                   About
                   {activeMenu === 'about' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
                 </a>
                
               </li>
-              {/* <li className={`cursor pointer ${activeMenu === 'about' ? 'active' : ''}`} onClick={() => handleMenuClick('about')}>
-                <a href="/#aboutus" className="relative">
-                  About us
-                  {activeMenu === 'about' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
-                </a>
-              </li> */}
+              
               <li className={`cursor pointer ${activeMenu === 'careers' ? 'active' : ''}`} onClick={() => handleMenuClick('careers')}>
-                <a href="/#careers" className="relative">
+                <a href="/#careers" 
+                 className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400"
+                >
                   Careers
                   {/* {activeMenu === 'careers' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>} */}
                 </a>
@@ -110,7 +107,7 @@ const Navbar2 = () => {
                 </a>
               </li>
               {/* Phone number section */}
-              <div className="flex items-center gap-4">
+              {/* <div className="flex items-center gap-4">
                 <li>
                   <BiPhoneCall className="h-[40px] w-[40px] rounded-md bg-primary p-2 text-2xl text-white hover:bg-primary/90" />
                 </li>
@@ -123,7 +120,7 @@ const Navbar2 = () => {
                     </p>
                   </div>
                 </li>
-              </div>
+              </div> */}
               {/* Light and dark mode switcher */}
               {theme === "dark" ? (
                 <BiSolidSun
