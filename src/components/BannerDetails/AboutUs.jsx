@@ -49,9 +49,9 @@ const AboutUs = () => {
                                 <p className="text-sm  dark:text-slate-400">
                                     To Ensure customer satisfaction with carefully crafted
                                     customizedsolutions to best fit their business needs
-                                    Kts focuses at re-defining and providing the broadest selection
+                                    Empower Africa now focuses at re-defining and providing the broadest selection
                                     of solutions to people and businesses that will take them to the next level
-                                    Kts aim is to serve customers with the world class solutions
+                                    Empower Africa now aim is to serve customers with the world class solutions
                                     to satisfy their business needs
                                 </p>
                             </div>
