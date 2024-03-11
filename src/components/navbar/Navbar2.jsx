@@ -93,7 +93,7 @@ const Navbar2 = () => {
               <li className={`cursor pointer group ${activeMenu === 'contact' ? 'active' : ''}`} onClick={() => handleMenuClick('contact')}>
                 <a
                   href="/#contact"
-                  className="flex h-[72px] items-center gap-[2px] relative"
+                  className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400"
                 >
                   Contact Us
                   {activeMenu === 'contact' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
@@ -106,22 +106,7 @@ const Navbar2 = () => {
                   {activeMenu === 'login' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
                 </a>
               </li>
-              {/* Phone number section */}
-              {/* <div className="flex items-center gap-4">
-                <li>
-                  <BiPhoneCall className="h-[40px] w-[40px] rounded-md bg-primary p-2 text-2xl text-white hover:bg-primary/90" />
-                </li>
-                <li>
-                  <div>
-                    <p className="text-sm">Call us on</p>
-                    <p className="text-lg">
-                      {" "}
-                      <a href="tel:+91123456789">+250780035234</a>
-                    </p>
-                  </div>
-                </li>
-              </div> */}
-              {/* Light and dark mode switcher */}
+              
               {theme === "dark" ? (
                 <BiSolidSun
                   onClick={() => setTheme("light")}
