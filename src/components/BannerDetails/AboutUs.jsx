@@ -30,6 +30,9 @@ const AboutUs = () => {
                                 Empowe Africa Now develops and maintains its products and services to be enterprise grade.
                             </h1>
                             <p className="text-sm  dark:text-slate-400">
+                                Empower Africa Now is a Rwandan private company that has been in business for over the past 6 years
+                                , and it is among the leading companies in Rwanda that rose from the needs to pivot on technology 
+                                and accelerate socio economic growth of the country.
                                 Empower Africa Now develops and maintains its products and services to be enterprise grade.
                                 reliable, secure,cost-efficient and interoperable while offering customers a choice in
                                 customizable solutionsthat best meet their business needs.
@@ -37,9 +40,8 @@ const AboutUs = () => {
                             <div>
                                 <h2 className=" text-2xl">Vision</h2>
                                 <p className="text-sm  dark:text-slate-400">
-                                    Empower Africa Now develops and maintains its products and services to be enterprise grade.
-                                    reliable, secure,cost-efficient and interoperable while offering customers a choice in
-                                    customizable solutionsthat best meet their business needs.
+                                    To become global technology anchor that empower people and businesses with
+                                    solutions that accelerate socio economic development of the countries.
                                 </p>
                             </div>
                             <div>
