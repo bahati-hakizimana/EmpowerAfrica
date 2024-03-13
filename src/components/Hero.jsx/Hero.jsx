@@ -24,9 +24,12 @@ const Hero = () => {
               <button className="rounded-md border-2 border-primary bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-primary/80">
                 Get Started
               </button>
+              <a href="#contact">
               <button className="border-1  rounded-md border-2 border-white px-4 py-2 text-sm text-white transition-colors duration-300 ">
                 Talk to Us
               </button>
+              </a>
+              
             </div>
           </div>
           <div

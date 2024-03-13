@@ -3,7 +3,7 @@ import { BiSolidSun, BiPhoneCall, BiSolidMoon } from "react-icons/bi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import { FaCaretDown } from "react-icons/fa";
 import ResponsiveMenu from "./ResponsiveMenu";
-import logo from '../../assets/Empower.png'
+import WmpowerLogo from '../../assets/WmpowerLogo.png'
 const Navbar2 = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
@@ -45,7 +45,8 @@ const Navbar2 = () => {
             <a href="/#home" className="">
               {/* COZ
               <span className="inline-block font-bold text-primary">WEB</span> */}
-              <img src={logo} alt="" className=" w-35 h-12"  />
+              <img src={WmpowerLogo} alt="" className=" w-35 h-12"  />
+              <h6 className=" text-sm">Empower Africa Now</h6>
             </a>
           </div>
           {/* Desktop Menu */}
