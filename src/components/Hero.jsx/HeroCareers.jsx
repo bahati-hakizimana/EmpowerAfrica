@@ -1,9 +1,11 @@
 import React from "react";
 import Banner from "../../assets/undraw_real_time_sync_re_nky7.svg";
+import Apply from "../forms/Apply";
 
-const Hero = () => {
+const HeroCareers = () => {
   return (
-    <main className="bg-primary from-violet-950 to-violet-900 pt-20 dark:bg-primary" id="home">
+    <>
+      <main className="bg-primary from-violet-950 to-violet-900 pt-20 dark:bg-primary" id="home">
       <section className="container flex h-[650px] flex-col items-center justify-center md:h-[500px] ">
         <div className="grid grid-cols-1 items-center gap-8 dark:text-white md:grid-cols-2">
           <div
@@ -22,12 +24,12 @@ const Hero = () => {
             </p>
             <div className="space-x-4">
               <button className="rounded-md border-2 border-primary bg-white px-4 py-2 text-sm text-primary transition-colors duration-300 hover:bg-purple-400 hover:text-white">
-                Get Started
+                Available role
               </button>
               <a href="#contact">
-              <button className="border-1  rounded-md border-2 border-white px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-purple-400 hover:text-white ">
+              {/* <button className="border-1  rounded-md border-2 border-white px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-purple-400 hover:text-white ">
                 Talk to Us
-              </button>
+              </button> */}
               </a>
               
             </div>
@@ -43,7 +45,12 @@ const Hero = () => {
         </div>
       </section>
     </main>
+
+    <Apply isVisible/>
+    </>
+  
   );
 };
 
-export default Hero;
+export default HeroCareers;
+

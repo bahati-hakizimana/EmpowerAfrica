@@ -7,17 +7,17 @@ import {
   FaMobileAlt,
 } from "react-icons/fa";
 // import ourlogo from '../../assets/ourlogo.png'
-import WmpowerLogo from '../../assets/WmpowerLogo.png'
+import logo5 from '../../assets/logo5.png'
 
 const Footer = () => {
   return (
-    <div className="rounded-t-3xl bg-gradient-to-r from-violet-950 to-violet-900">
+    <div className="rounded-t-3xl bg-primary from-violet-950 to-violet-900">
       <section className="mx-auto max-w-[1200px] text-white">
         <div className=" grid py-5 md:grid-cols-3">
           <div className=" px-4 py-8 ">
             <h1 className="mb-3 text-justify text-xl font-bold sm:text-left sm:text-3xl">
               <a href="/#home" className="">
-              <img src={WmpowerLogo} alt="" className=" w-35 h-12"  />
+              <img src={logo5} alt="" className=" w-35 h-12"  />
               </a>
             </h1>
             <p className="">

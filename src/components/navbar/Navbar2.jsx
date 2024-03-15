@@ -3,7 +3,8 @@ import { BiSolidSun, BiPhoneCall, BiSolidMoon } from "react-icons/bi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import { FaCaretDown } from "react-icons/fa";
 import ResponsiveMenu from "./ResponsiveMenu";
-import logo2 from '../../assets/logo2.png'
+import logo5 from '../../assets/logo5.png'
+// import logo2 from '../../assets/logo2.png'
 const Navbar2 = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
@@ -38,14 +39,14 @@ const Navbar2 = () => {
       <header
         data-aos="fade"
         data-aos-duration="300"
-        className="relative z-[99] border-b-[1px]  border-primary/50 bg-purple-500 from-violet-900 via-violet-800 to-violet-900 text-white shadow-lg"
+        className="relative z-[99] border-b-[1px]  border-primary/50 bg-primary from-violet-900 via-violet-800 to-violet-900 text-white shadow-lg"
       >
         <nav className="container  flex h-[70px] items-center justify-between py-2 ">
           <div className="text-2xl text-white md:text-3xl ">
             <a href="/#home" className="">
               {/* COZ
               <span className="inline-block font-bold text-primary">WEB</span> */}
-              <img src={logo2} alt="" className=" w-35 h-12"  />
+              <img src={logo5} alt="" className=" w-35 h-12"  />
               <h6 className=" text-sm">Empower Africa Now</h6>
             </a>
           </div>
@@ -84,7 +85,7 @@ const Navbar2 = () => {
               </li>
               
               <li className={`cursor pointer ${activeMenu === 'careers' ? 'active' : ''}`} onClick={() => handleMenuClick('careers')}>
-                <a href="/#careers" 
+                <a href="/careers" 
                  className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400"
                 >
                   Careers
@@ -102,7 +103,7 @@ const Navbar2 = () => {
                
               </li>
               <li className={`cursor pointer ${activeMenu === 'login' ? 'active' : ''}`} onClick={() => handleMenuClick('login')}>
-                <a href="#" className="relative">
+                <a href="/login" className="relative">
                   Login
                   {activeMenu === 'login' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
                 </a>
