@@ -1,14 +1,37 @@
 import React, { useState } from "react";
 import Banner from "../../assets/undraw_real_time_sync_re_nky7.svg";
 import Apply from "../Hero.jsx/Apply";
+import Apply1 from "../Hero.jsx/Apply1";
 import AvailableRoles from "./AvailableRoles";
+
 
 const HeroCareers = () => {
   const [showApply, setShowApply] = useState(false);
-
-  const handleShowAvailableRoles = () => {
-    setShowAvailableRoles(true);
+  const [showApply1, setShowApply1] = useState(false);
+  const [uploadStatus, setUploadStatus] = useState(null);
+  // Handle file format validation
+  const validateFileFormat = (file) => {
+    const allowedFormats = ["pdf", "doc", "docx"];
+    const fileFormat = file.name.split(".").pop().toLowerCase();
+    return allowedFormats.includes(fileFormat);
   };
+
+  // Handle file upload
+  const handleFileUpload = (e, fileType) => {
+    const file = e.target.files[0];
+    if (!validateFileFormat(file)) {
+      setUploadStatus({ success: false, message: "Please upload a file in PDF, DOC, or DOCX format." });
+      e.target.value = null;
+      return;
+    }
+    // Perform file upload logic
+    console.log(`Uploading ${fileType}...`);
+    // Assuming upload was successful
+    setUploadStatus({ success: true, message: `${fileType} uploaded successfully.` });
+  };
+  // const handleShowAvailableRoles = () => {
+  //   setShowAvailableRoles(true);
+  // };
 
   return (
     <>
@@ -31,12 +54,14 @@ const HeroCareers = () => {
                 in the global drive for employment equality. We celebrate diversity, thrive on creating an inclusive
                 environment for all employees and aiming for balance in our workforce
               </p>
-              <h3 className="text-xl text-black">
-                Job Title: Job Title: Fleet Supervisor, Car Rental
-              </h3>
+
               <div>
+                <h3 className="text-xl text-black">
+                  Job Title:Fleet Supervisor, Car Rental
+                </h3>
+
                 <p className=" text-sm font-normal text-black">
-                  <h3 className=" text-xl font-semibold text-gray-900 mb-0.5 text-center">Description</h3>
+                  <h3 className=" text-xl font-semibold text-gray-900 mb-0.5">Description</h3>
 
                   We are seeking a skilled and experienced fleet supervisor to oversee our car rental division.
                   The successful candidate will have oversight on operations and maintenance for a
@@ -49,7 +74,7 @@ const HeroCareers = () => {
                 </p>
               </div>
               <div className="space-x-4">
-                <button
+                <button onClick={() => setShowApply1(true)}
                   className="rounded-md border-2 border-white bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-gray-500 hover:text-white"
                 >
                   Apply here
@@ -76,25 +101,16 @@ const HeroCareers = () => {
 
         </section>
       </main>
+
+      {/* Visit More Details On this Job */}
+
+
       <Apply isVisible={showApply} onClose={() => setShowApply(false)} className="">
         <div className="p-6">
           <h3 className=" text-xl font-semibold text-gray-900 mb-2 text-center">Job Title: Fleet Supervisor, Car Rental</h3>
           <div className="">
             <div className="flex gap-4">
-              {/* <div>
-                <p className=" text-sm font-normal text-black">
-                  <h3 className=" text-xl font-semibold text-gray-900 mb-0.5 text-center">Description</h3>
 
-                  We are seeking a skilled and experienced fleet supervisor to oversee our car rental division.
-                  The successful candidate will have oversight on operations and maintenance for a
-                  company’s vehicle fleet, ensuring efficiency, safety, and compliance with regulations. This
-                  position involves coordinating the daily activities of vehicles and drivers, managing
-                  maintenance schedules, and optimizing routes to meet client needs. By monitoring
-                  performance and implementing strategic improvements, the Fleet Supervisor contributes
-                  to the overall operational success, aiming for cost-effectiveness and reliability in
-                  transportation resources for our clients.
-                </p>
-              </div> */}
               <div>
                 <h3 className=" text-xl font-semibold text-gray-900 mb-0.5 text-center">Duties and responsibilities</h3>
                 <p className="text-sm font-normal text-black">
@@ -112,14 +128,6 @@ const HeroCareers = () => {
                   <li>Investigate and resolve any accidents or incidents involving fleet vehicles, including
                     liaising with insurance companies and legal entities</li>
 
-                  {/* Oversee daily operations of the fleet, including scheduling and 
-                  dispatching vehicles to ensure timely and efficient service.Implement
-                  and enforce maintenance schedules for all vehicles to minimize downtimeand
-                  extend the lifespan of the fleet.Monitor and manage fuel consumption and costs,
-                  implementing strategies to reduceexpenses and improve efficiency.Ensure compliance 
-                  with all government regulations and company policies regardingvehicle operation and safety.
-                  Handle recruitment, training, and performance evaluation of fleet drivers, promotinga culture
-                  of safety and professionalism. */}
                 </p>
 
               </div>
@@ -174,6 +182,121 @@ const HeroCareers = () => {
         </div>
 
       </Apply>
+
+      {/* Apply For Job Section */}
+
+
+      <Apply1 isVisible={showApply1} onClose={() => setShowApply1(false)} className="">
+        {uploadStatus && (
+          <div className={`text-center ${uploadStatus.success ? 'text-green-500' : 'text-red-500'}`}>
+            {uploadStatus.message}
+          </div>
+        )}
+        <div className="p-6 flex flex-col justify-self-center">
+          <h3 className=" text-xl font-semibold text-gray-900 mb-2 text-center">Fill These form to Apply</h3>
+          <div>
+            <form action="">
+              <div className="border-b border-gray-900/10 pb-12">
+                <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                  <div className="sm:col-span-3">
+                    <label htmlFor="first-name" className="block text-sm font-medium leading-6 text-gray-900">
+                      First name
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        type="text"
+                        name="first-name"
+                        id="first-name"
+                        autoComplete="given-name"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-3">
+                    <label htmlFor="last-name" className="block text-sm font-medium leading-6 text-gray-900">
+                      Last name
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        type="text"
+                        name="last-name"
+                        id="last-name"
+                        autoComplete="family-name"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-3">
+                    <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+                      Email
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        autoComplete="email"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-3">
+                    <label htmlFor="phone" className="block text-sm font-medium leading-6 text-gray-900">
+                      Phone
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        type="tel"
+                        name="phone"
+                        id="phone"
+                        autoComplete="tel"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-3">
+                    <label htmlFor="resume" className="block text-sm font-medium leading-6 text-gray-900">
+                      Upload CV/Resume
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        type="file"
+                        name="resume"
+                        id="resume"
+                        accept=".pdf,.doc,.docx"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        onChange={(e) => handleFileUpload(e, "CV/Resume")}
+                      />
+                    </div>
+                  </div>
+                  <div className="sm:col-span-3">
+                    <label htmlFor="coverletter" className="block text-sm font-medium leading-6 text-gray-900">
+                      Upload Cover Letter
+                    </label>
+                    <div className="mt-2">
+                      <input
+                        type="file"
+                        name="coverletter"
+                        id="coverletter"
+                        accept=".pdf,.doc,.docx"
+                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                        onChange={(e) => handleFileUpload(e, "Cover Letter")}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div className="space-x-4 mb-5 flex justify-center">
+          <button
+            className="rounded-md border-2 border-white bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-primary hover:text-white"
+          >
+            Apply here
+          </button>
+        </div>
+      </Apply1>
     </>
 
   );

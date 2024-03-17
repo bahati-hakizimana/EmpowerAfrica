@@ -4,6 +4,7 @@ import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import { FaCaretDown } from "react-icons/fa";
 import ResponsiveMenu from "./ResponsiveMenu";
 import logo5 from '../../assets/logo5.png'
+import { Link } from "react-router-dom";
 // import logo2 from '../../assets/logo2.png'
 const Navbar2 = () => {
   const [theme, setTheme] = useState(
