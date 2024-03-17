@@ -30,7 +30,7 @@ const Home = () => {
         <Blogs />
         <Contact />
         <Footer />
-        <Career />
+        {/* <Career /> */}
         {/* <Switch>
           <Route path="/careers" component={Career} />
         </Switch> */}
