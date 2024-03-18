@@ -14,11 +14,13 @@ import AboutUs from "./BannerDetails/AboutUs";
 import Career from "./careers/Career";
 import Contact from './contact/Contact';
 import Features from './features/Features';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Signin from './forms/Signin';
 
 const Home = () => {
   return (
-   <>
-   <div className="dark:bg-slate-900 dark:text-white">
+    <>
+      <div className="dark:bg-slate-900 dark:text-white">
         <div className="fixed left-0 right-0 top-0 z-50 bg-gradient-to-l from-violet-900 via-violet-800 to-violet-900 ">
           <Navbar2 />
         </div>
@@ -30,12 +32,13 @@ const Home = () => {
         <Blogs />
         <Contact />
         <Footer />
+       
         {/* <Career /> */}
         {/* <Switch>
           <Route path="/careers" component={Career} />
         </Switch> */}
       </div>
-   </>
+    </>
   )
 }
 

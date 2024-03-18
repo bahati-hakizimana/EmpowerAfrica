@@ -3,8 +3,8 @@ import { BiSolidSun, BiPhoneCall, BiSolidMoon } from "react-icons/bi";
 import { HiMenuAlt3, HiMenuAlt1 } from "react-icons/hi";
 import { FaCaretDown } from "react-icons/fa";
 import ResponsiveMenu from "./ResponsiveMenu";
-import logo5 from '../../assets/logo5.png'
-import { Link } from "react-router-dom";
+import logo2 from '../../assets/logo2.png';
+import { Link } from 'react-router-dom';
 // import logo2 from '../../assets/logo2.png'
 const Navbar2 = () => {
   const [theme, setTheme] = useState(
@@ -40,39 +40,39 @@ const Navbar2 = () => {
       <header
         data-aos="fade"
         data-aos-duration="300"
-        className="relative z-[99] border-b-[1px]  border-primary/50 bg-primary from-violet-900 via-violet-800 to-violet-900 text-white shadow-lg"
+        className="relative z-[99] border-b-[1px]  border-primary/50 bg-purple-50 from-violet-900 via-violet-800 to-violet-900 text-white shadow-lg"
       >
         <nav className="container  flex h-[70px] items-center justify-between py-2 ">
-          <div className="text-2xl text-white md:text-3xl ">
+          <div className="text-2xl text-gray-950 md:text-3xl ">
             <a href="/#home" className="">
               {/* COZ
               <span className="inline-block font-bold text-primary">WEB</span> */}
-              <img src={logo5} alt="" className=" w-35 h-12"  />
+              <img src={logo2} alt="" className=" w-35 h-12" />
               <h6 className=" text-sm">Empower Africa Now</h6>
             </a>
           </div>
           {/* Desktop Menu */}
           <div className="hidden md:block">
-            <ul className="flex items-center gap-10">
+            <ul className="flex items-center gap-10 text-gray-950">
               <li className={`group relative cursor-pointer ${activeMenu === 'home' ? 'active' : ''}`} onClick={() => handleMenuClick('home')}>
                 <a
                   href="/#home"
                   className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-300"
                 >
                   Home
-                  {activeMenu === 'home' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                  {activeMenu === 'home' && <div className="absolute bottom-0 left-0 h-1 w-full bg-black"></div>}
                 </a>
-                </li>
-                
+              </li>
+
               <li className={`cursor pointer group ${activeMenu === 'services' ? 'active' : ''}`} onClick={() => handleMenuClick('services')}>
                 <a
                   href="/#services"
                   className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400"
                 >
                   Services
-                  {activeMenu === 'services' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                  {activeMenu === 'services' && <div className="absolute bottom-0 left-0 h-1 w-full bg-black"></div>}
                 </a>
-               
+
               </li>
               <li className={`cursor pointer group ${activeMenu === 'about' ? 'active' : ''}`} onClick={() => handleMenuClick('about')}>
                 <a
@@ -80,18 +80,16 @@ const Navbar2 = () => {
                   className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400"
                 >
                   About
-                  {activeMenu === 'about' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                  {activeMenu === 'about' && <div className="absolute bottom-0 left-0 h-1 w-full bg-black"></div>}
                 </a>
-               
+
               </li>
-              
-              <li className={`cursor pointer ${activeMenu === 'careers' ? 'active' : ''}`} onClick={() => handleMenuClick('careers')}>
-                <a href="/careers" 
-                 className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400"
-                >
+
+              <li className={`cursor-pointer ${activeMenu === 'careers' ? 'active' : ''}`} onClick={() => handleMenuClick('careers')}>
+                <Link to="/careers" className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400">
                   Careers
                   {/* {activeMenu === 'careers' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>} */}
-                </a>
+                </Link>
               </li>
               <li className={`cursor pointer group ${activeMenu === 'contact' ? 'active' : ''}`} onClick={() => handleMenuClick('contact')}>
                 <a
@@ -99,17 +97,17 @@ const Navbar2 = () => {
                   className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400"
                 >
                   Contact Us
-                  {activeMenu === 'contact' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                  {activeMenu === 'contact' && <div className="absolute bottom-0 left-0 h-1 w-full bg-black"></div>}
                 </a>
-               
+
               </li>
               <li className={`cursor pointer ${activeMenu === 'login' ? 'active' : ''}`} onClick={() => handleMenuClick('login')}>
                 <a href="/login" className="relative">
                   Login
-                  {activeMenu === 'login' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>}
+                  {activeMenu === 'login' && <div className="absolute bottom-0 left-0 h-1 w-full bg-black"></div>}
                 </a>
               </li>
-              
+
               {theme === "dark" ? (
                 <BiSolidSun
                   onClick={() => setTheme("light")}
@@ -140,13 +138,13 @@ const Navbar2 = () => {
             {showMenu ? (
               <HiMenuAlt1
                 onClick={toggleMenu}
-                className=" cursor-pointer transition-all"
+                className=" cursor-pointer transition-all text-black"
                 size={30}
               />
             ) : (
               <HiMenuAlt3
                 onClick={toggleMenu}
-                className="cursor-pointer transition-all"
+                className="cursor-pointer transition-all text-black"
                 size={30}
               />
             )}

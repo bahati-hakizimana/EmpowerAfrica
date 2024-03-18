@@ -1,11 +1,14 @@
-import React, { useState } from "react";
+import React, { useState, useRef } from "react";
 import Banner from "../../assets/undraw_real_time_sync_re_nky7.svg";
 import Apply from "../Hero.jsx/Apply";
 import Apply1 from "../Hero.jsx/Apply1";
 import AvailableRoles from "./AvailableRoles";
+import emailjs from '@emailjs/browser';
 
 
 const HeroCareers = () => {
+
+  const form = useRef();
   const [showApply, setShowApply] = useState(false);
   const [showApply1, setShowApply1] = useState(false);
   const [uploadStatus, setUploadStatus] = useState(null);
@@ -15,12 +18,16 @@ const HeroCareers = () => {
     const fileFormat = file.name.split(".").pop().toLowerCase();
     return allowedFormats.includes(fileFormat);
   };
-
-  // Handle file upload
+  const MAX_FILE_SIZE = 5000000; // 5MB
   const handleFileUpload = (e, fileType) => {
     const file = e.target.files[0];
     if (!validateFileFormat(file)) {
       setUploadStatus({ success: false, message: "Please upload a file in PDF, DOC, or DOCX format." });
+      e.target.value = null;
+      return;
+    }
+    if (file.size > MAX_FILE_SIZE) {
+      setUploadStatus({ success: false, message: "File size exceeds the limit. Please upload a smaller file." });
       e.target.value = null;
       return;
     }
@@ -29,9 +36,56 @@ const HeroCareers = () => {
     // Assuming upload was successful
     setUploadStatus({ success: true, message: `${fileType} uploaded successfully.` });
   };
+
+  // Handle file upload
+  // const handleFileUpload = (e, fileType) => {
+  //   const file = e.target.files[0];
+  //   if (!validateFileFormat(file)) {
+  //     setUploadStatus({ success: false, message: "Please upload a file in PDF, DOC, or DOCX format." });
+  //     e.target.value = null;
+  //     return;
+  //   }
+  //   // Perform file upload logic
+  //   console.log(`Uploading ${fileType}...`);
+  //   // Assuming upload was successful
+  //   setUploadStatus({ success: true, message: `${fileType} uploaded successfully.` });
+  // };
   // const handleShowAvailableRoles = () => {
   //   setShowAvailableRoles(true);
   // };
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
+  //   emailjs
+  //     .sendForm('gmail', 'template_z1rbf9c', form.current, {
+  //       publicKey: 'qLQfF6rOxYun6Uv7y',
+  //     })
+  //     .then(
+  //       () => {
+  //         console.log('SUCCESS!');
+  //       },
+  //       (error) => {
+  //         console.log('FAILED...', error.text);
+  //       },
+  //       );
+  //       e.target.reset();
+  //     }
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const formDataSize = Array.from(formData).reduce((acc, [key, value]) => acc + key.length + value.length, 0);
+    if (formDataSize <= 50000) {
+      emailjs.sendForm('service_xjf51tb', 'template_z1rbf9c', e.target, 'qLQfF6rOxYun6Uv7y')
+        .then((result) => {
+          console.log('Email sent successfully:', result.text);
+        }, (error) => {
+          console.error('Email sending failed:', error.text);
+        });
+    } else {
+      console.error('Form data size exceeds the limit');
+    }
+
+  };
 
   return (
     <>
@@ -112,7 +166,7 @@ const HeroCareers = () => {
             <div className="flex gap-4">
 
               <div>
-                <h3 className=" text-xl font-semibold text-gray-900 mb-0.5 text-center">Duties and responsibilities</h3>
+                <h3 className=" text-xl underline font-semibold text-gray-900 mb-0.5 text-center">Duties and responsibilities</h3>
                 <p className="text-sm font-normal text-black">
                   <li>Oversee daily operations of the fleet, including scheduling and dispatching vehicles to timely and efficient service.</li>
                   <li>Implement and enforce maintenance schedules for all vehicles to minimize downtime
@@ -136,7 +190,7 @@ const HeroCareers = () => {
             </div>
             <div className="flex gap-8">
               <div className="">
-                <h3 className=" text-xl font-semibold text-gray-900 mb-0.5 text-center">Qualifications</h3>
+                <h3 className=" text-xl underline font-semibold text-gray-900 mb-0.5 text-center">Qualifications</h3>
                 <p className="text-sm font-normal text-black">
 
                   <li>High school Diploma (A2) at a minimum, preferably in moto mechanics or related field</li>
@@ -152,8 +206,9 @@ const HeroCareers = () => {
 
               </div>
               <div>
+                <h3 className=" text-xl font-semibold text-gray-900 mb-0.5 text-center underline">Why Us</h3>
                 <p className="tex-sm font-normal text-black">
-                  <h3 className=" text-xl font-semibold text-gray-900 mb-0.5 text-center">Why Us</h3>
+
 
                   At Empower Africa, you will have the opportunity <br />
                   to make a meaningful impact to our   <br />
@@ -173,10 +228,10 @@ const HeroCareers = () => {
 
         </div>
         <div className="space-x-4 mb-5 flex justify-center">
-          <button
-            className="rounded-md border-2 border-white bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-primary hover:text-white"
+          <button onClick={() => setShowApply1(true)}
+            className="rounded-md border-2 border-white bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-gray-500 hover:text-white"
           >
-            Apply here
+            Apply Now
           </button>
 
         </div>
@@ -193,9 +248,17 @@ const HeroCareers = () => {
           </div>
         )}
         <div className="p-6 flex flex-col justify-self-center">
-          <h3 className=" text-xl font-semibold text-gray-900 mb-2 text-center">Fill These form to Apply</h3>
+          <h3 className=" text-xl font-semibold text-gray-900 mb-2 text-center">Application process</h3>
           <div>
-            <form action="">
+            <li className=" text-xl font-semibold text-gray-900 mb-2 text-center">Attarch Your Cv/resume</li>
+            <li className=" text-xl font-semibold text-gray-900 mb-2 text-center">Attarch your Coverletter</li>
+            <li className="text-xl font-semibold text-gray-900 mb-2">
+              Submit both of them to:{" "}
+              <a href="mailto:info@empowerafricanow.com" className="text-blue-600 hover:underline">
+                info@empowerafricanow.com
+              </a>
+            </li>
+            {/* <form ref={form} onSubmit={sendEmail} >
               <div className="border-b border-gray-900/10 pb-12">
                 <div className="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                   <div className="sm:col-span-3">
@@ -205,8 +268,8 @@ const HeroCareers = () => {
                     <div className="mt-2">
                       <input
                         type="text"
-                        name="first-name"
-                        id="first-name"
+                        name="first_name"
+                        id="first_name"
                         autoComplete="given-name"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
@@ -219,8 +282,8 @@ const HeroCareers = () => {
                     <div className="mt-2">
                       <input
                         type="text"
-                        name="last-name"
-                        id="last-name"
+                        name="last_name"
+                        id="last_name"
                         autoComplete="family-name"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                       />
@@ -233,7 +296,7 @@ const HeroCareers = () => {
                     <div className="mt-2">
                       <input
                         type="email"
-                        name="email"
+                        name="user_email"
                         id="email"
                         autoComplete="email"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -261,7 +324,7 @@ const HeroCareers = () => {
                     <div className="mt-2">
                       <input
                         type="file"
-                        name="resume"
+                        name="user_resume"
                         id="resume"
                         accept=".pdf,.doc,.docx"
                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -286,16 +349,17 @@ const HeroCareers = () => {
                   </div>
                 </div>
               </div>
-            </form>
+              <div className="space-x-4 mb-5 flex justify-center">
+                <button
+                  className="rounded-md border-2 border-white bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-primary hover:text-white"
+                >
+                  Submitt Application
+                </button>
+              </div>
+            </form> */}
           </div>
         </div>
-        <div className="space-x-4 mb-5 flex justify-center">
-          <button
-            className="rounded-md border-2 border-white bg-primary px-4 py-2 text-sm text-white transition-colors duration-300 hover:bg-primary hover:text-white"
-          >
-            Apply here
-          </button>
-        </div>
+
       </Apply1>
     </>
 
