@@ -113,6 +113,9 @@ const HeroCareers = () => {
                 <h3 className="text-xl text-black">
                   Job Title:Fleet Supervisor, Car Rental
                 </h3>
+                <h3 className="text-xl text-black">
+                  Died Line:31 March 2024
+                </h3>
 
                 <p className=" text-sm font-normal text-black">
                   <h3 className=" text-xl font-semibold text-gray-900 mb-0.5">Description</h3>
@@ -159,8 +162,8 @@ const HeroCareers = () => {
       {/* Visit More Details On this Job */}
 
 
-      <Apply isVisible={showApply} onClose={() => setShowApply(false)} className="">
-        <div className="p-6">
+      <Apply isVisible={showApply} onClose={() => setShowApply(false)} className=" ">
+        <div className="p-6 px-20 py-2 ">
           <h3 className=" text-xl font-semibold text-gray-900 mb-2 text-center">Job Title: Fleet Supervisor, Car Rental</h3>
           <div className="">
             <div className="flex gap-4">
@@ -188,7 +191,7 @@ const HeroCareers = () => {
 
 
             </div>
-            <div className="flex gap-8">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4">
               <div className="">
                 <h3 className=" text-xl underline font-semibold text-gray-900 mb-0.5 text-center">Qualifications</h3>
                 <p className="text-sm font-normal text-black">
@@ -247,7 +250,7 @@ const HeroCareers = () => {
             {uploadStatus.message}
           </div>
         )}
-        <div className="p-6 flex flex-col justify-self-center">
+        <div className="p-6 flex flex-col justify-self-center w-[675px]">
           <h3 className=" text-xl font-semibold text-gray-900 mb-2 text-center">Application process</h3>
           <div>
             <li className=" text-xl font-semibold text-gray-900 mb-2 text-center">Attarch Your Cv/resume</li>

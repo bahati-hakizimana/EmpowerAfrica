@@ -81,12 +81,12 @@ const Footer = () => {
                   Social Links
                 </h1>
                 <div className="flex flex-col gap-3">
-                  <h1>Subscribe to our newsletter</h1>
+                  {/* <h1>Subscribe to our newsletter</h1>
                   <input
                     className="rounded-full px-3 py-1 text-black focus:border-sky-500 focus:outline-none focus:ring-2 focus:ring-sky-500 "
                     type="text"
                     placeholder="Email"
-                  />
+                  /> */}
                   <div className="mt-6 flex items-center gap-3">
                     <a href="#" className="duration-200 hover:scale-105">
                       <FaInstagram className="text-3xl" />

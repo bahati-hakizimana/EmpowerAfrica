@@ -41,11 +41,7 @@ const ResponsiveMenu = ({ showMenu }) => {
                 Login
               </a>
             </li>
-            <li>
-              <a href="#" className="mb-5 inline-block">
-                Careers
-              </a>
-            </li>
+           
           </ul>
         </nav>
       </div>

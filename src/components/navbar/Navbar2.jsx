@@ -101,12 +101,12 @@ const Navbar2 = () => {
                 </a>
 
               </li>
-              <li className={`cursor pointer ${activeMenu === 'login' ? 'active' : ''}`} onClick={() => handleMenuClick('login')}>
+              {/* <li className={`cursor pointer ${activeMenu === 'login' ? 'active' : ''}`} onClick={() => handleMenuClick('login')}>
                 <a href="/login" className="relative">
                   Login
                   {activeMenu === 'login' && <div className="absolute bottom-0 left-0 h-1 w-full bg-black"></div>}
                 </a>
-              </li>
+              </li> */}
 
               {theme === "dark" ? (
                 <BiSolidSun
