@@ -5,7 +5,7 @@ import { FaCaretDown } from "react-icons/fa";
 import ResponsiveMenu from "./ResponsiveMenu";
 import logo2 from '../../assets/logo2.png';
 import { Link } from 'react-router-dom';
-// import logo2 from '../../assets/logo2.png'
+
 const Navbar2 = () => {
   const [theme, setTheme] = useState(
     localStorage.getItem("theme") ? localStorage.getItem("theme") : "light",
@@ -21,6 +21,7 @@ const Navbar2 = () => {
 
   const handleMenuClick = (menu) => {
     setActiveMenu(menu);
+    setShowMenu(false); // Hide the menu after clicking on a navigation link
   };
 
   useEffect(() => {
@@ -45,8 +46,6 @@ const Navbar2 = () => {
         <nav className="container  flex h-[70px] items-center justify-between py-2 ">
           <div className="text-2xl text-gray-950 md:text-3xl ">
             <a href="/#home" className="">
-              {/* COZ
-              <span className="inline-block font-bold text-primary">WEB</span> */}
               <img src={logo2} alt="" className=" w-35 h-12" />
               <h6 className=" text-sm">Empower Africa Now</h6>
             </a>
@@ -88,7 +87,6 @@ const Navbar2 = () => {
               <li className={`cursor-pointer ${activeMenu === 'careers' ? 'active' : ''}`} onClick={() => handleMenuClick('careers')}>
                 <Link to="/careers" className="flex h-[72px] items-center gap-[2px] relative hover:text-yellow-400">
                   Careers
-                  {/* {activeMenu === 'careers' && <div className="absolute bottom-0 left-0 h-1 w-full bg-white"></div>} */}
                 </Link>
               </li>
               <li className={`cursor pointer group ${activeMenu === 'contact' ? 'active' : ''}`} onClick={() => handleMenuClick('contact')}>
@@ -101,24 +99,6 @@ const Navbar2 = () => {
                 </a>
 
               </li>
-              {/* <li className={`cursor pointer ${activeMenu === 'login' ? 'active' : ''}`} onClick={() => handleMenuClick('login')}>
-                <a href="/login" className="relative">
-                  Login
-                  {activeMenu === 'login' && <div className="absolute bottom-0 left-0 h-1 w-full bg-black"></div>}
-                </a>
-              </li> */}
-
-              {theme === "dark" ? (
-                <BiSolidSun
-                  onClick={() => setTheme("light")}
-                  className="text-2xl"
-                />
-              ) : (
-                <BiSolidMoon
-                  onClick={() => setTheme("dark")}
-                  className="text-2xl"
-                />
-              )}
             </ul>
           </div>
 

@@ -3,8 +3,18 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from 'react-router-dom';
 
 const ResponsiveMenu = ({ showMenu }) => {
-  console.log("showMenu", showMenu);
-  
+  const handleNavLinkClick = (id) => {
+    // Hide the menu
+    // You need to implement a function to hide the menu, e.g., using state
+    console.log("hide menu here");
+
+    // Scroll to the section or id
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div
       className={`${
@@ -16,17 +26,17 @@ const ResponsiveMenu = ({ showMenu }) => {
         <nav className="mt-12">
           <ul className="space-y-4 text-xl">
             <li>
-              <a href="#home" className="mb-5 inline-block">
+              <a href="#home" className="mb-5 inline-block" onClick={() => handleNavLinkClick("home")}>
                 Home
               </a>
             </li>
             <li>
-              <a href="#services" className="mb-5 inline-block">
+              <a href="#services" className="mb-5 inline-block" onClick={() => handleNavLinkClick("services")}>
                 Services
               </a>
             </li>
             <li>
-              <a href="#about" className="mb-5 inline-block">
+              <a href="#about" className="mb-5 inline-block" onClick={() => handleNavLinkClick("about")}>
                 About us
               </a>
             </li>
@@ -37,7 +47,7 @@ const ResponsiveMenu = ({ showMenu }) => {
                 </Link>
               </li>
             <li>
-              <a href="#" className="mb-5 inline-block">
+              <a href="#" className="mb-5 inline-block" onClick={() => handleNavLinkClick("login")}>
                 Login
               </a>
             </li>

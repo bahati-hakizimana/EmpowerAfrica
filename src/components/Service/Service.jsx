@@ -35,7 +35,7 @@ const Service = () => {
               suffix="+"
             />
           </h1>
-          <h1 className="sm:text-md text-xs  md:text-lg">Partiners</h1>
+          <h1 className="sm:text-md text-xs  md:text-lg">Partners</h1>
         </div>
       </div>
     </section>

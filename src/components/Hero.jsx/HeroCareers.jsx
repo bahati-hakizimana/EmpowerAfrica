@@ -253,8 +253,8 @@ const HeroCareers = () => {
         <div className="p-6 flex flex-col justify-self-center w-[675px]">
           <h3 className=" text-xl font-semibold text-gray-900 mb-2 text-center">Application process</h3>
           <div>
-            <li className=" text-xl font-semibold text-gray-900 mb-2 text-center">Attarch Your Cv/resume</li>
-            <li className=" text-xl font-semibold text-gray-900 mb-2 text-center">Attarch your Coverletter</li>
+            <li className=" text-xl font-semibold text-gray-900 mb-2 text-center">Attach Your Cv/resume</li>
+            <li className=" text-xl font-semibold text-gray-900 mb-2 text-center">Attach your Coverletter</li>
             <li className="text-xl font-semibold text-gray-900 mb-2">
               Submit both of them to:{" "}
               <a href="mailto:info@empowerafricanow.com" className="text-blue-600 hover:underline">

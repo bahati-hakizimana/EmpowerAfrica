@@ -26,7 +26,7 @@ const AboutUs = () => {
                             className="flex flex-col items-start gap-4 text-left md:items-start md:p-8 md:text-left "
 
                         >
-                            <h1 className="text-2xl md:text-2xl ">
+                            <h1 className="text-xl md:text-xl ">
                                 Empowe Africa Now develops and maintains its products and services to be enterprise grade.
                             </h1>
                             <p className="text-sm  dark:text-slate-400">
