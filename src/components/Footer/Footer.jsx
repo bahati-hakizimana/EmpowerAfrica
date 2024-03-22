@@ -21,9 +21,9 @@ const Footer = () => {
               </a>
             </h1>
             <p className="">
-              Lorem ipsum dolor sit amet consectetur. Lorem ipsum dolor sit amet
-              consectetur adipisicing elit. Possimus, voluptate.{" "}
-            </p>
+                Empower Africa Now believes in growth <br />
+                by the result of forces working together
+              </p>
             <br />
             <div className="flex items-center gap-3">
               <FaLocationArrow />
@@ -31,7 +31,7 @@ const Footer = () => {
             </div>
             <div className="mt-3 flex items-center gap-3">
               <FaMobileAlt />
-              <p>+250780035234</p>
+              <p>+250 783 791 732</p>
             </div>
             {/* Social Handle */}
           </div>
